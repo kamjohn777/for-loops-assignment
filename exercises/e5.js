@@ -6,9 +6,17 @@
 
 export function getAllClientNames(array) {
   // Your code goes here...
+  let clientNames = [];
 
+  for(let i = 0; i < array.length; i++) {
+    clientNames.push(array[i].clientNames);
+    // if(array !== "str") {
+    //   throw new Error("Please enter only a string");
+    // }
+  }
+  console.log(clientNames);
+  return clientNames;
 }
-
 
 
 // === TEST YOURSELF ===
