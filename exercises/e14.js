@@ -7,8 +7,14 @@
 
 export function getClientsWithWrongBalance(array) {
   // Your code goes here...
+    return array.filter((account) => {
+      const depositSum = (account.deposits || []).reduce((acc, val) => acc + val, 0);
+      const withdrawalSum = (account.withdrawals || []).reduce((acc, val) => acc + val, 0);
+      const balance = depositSum - withdrawalSum;
+      return balance !== account.balance;
+    });
+  }
 
-}
 
 
 

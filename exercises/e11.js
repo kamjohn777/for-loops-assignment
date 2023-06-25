@@ -6,16 +6,19 @@
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
-    let customerWithdrawals = [];
-  
-    for (let i = 0; i < array.length; i++) {
-      if (array[i].withdrawals) {
-        customerWithdrawals.push(...array[i].withdrawals);
-      } else {
-        customerWithdrawals.push(0);
+  let customerWithdrawals = [];
+
+  for (let i = 0; i < array.length; i++) {
+    let sum = 0;
+    if (array[i].withdrawals) {
+      for (const val of array[i].withdrawals) {
+        sum += val;
       }
     }
-    return customerWithdrawals;
+    customerWithdrawals.push(sum);
+  }
+
+  return customerWithdrawals;
   }
   
 
