@@ -6,8 +6,18 @@
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
-
-}
+    let customerWithdrawals = [];
+  
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].withdrawals) {
+        customerWithdrawals.push(...array[i].withdrawals);
+      } else {
+        customerWithdrawals.push(0);
+      }
+    }
+    return customerWithdrawals;
+  }
+  
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"
