@@ -6,7 +6,25 @@
 
 export function getClientWithLeastPositiveBalance(array) {
   // Your code goes here...
+  const bankAccountsNoPositiveBalance = [
+    { id: 1, name: "Susan", balance: -100.32 },
+    { id: 2, name: "Morgan", balance: -1100.0 },
+    { id: 3, name: "Joshua", balance: -18456.57 },
+    { id: 4, name: "Candy", balance: 0.0 },
+    { id: 5, name: "Phil", balance: -18 },
+  ];
+
+  let lowBalance = [];
   
+  for(let i = 0; i < array.length; i++) {
+    if(array[i].balance > 0) {
+      lowBalance.push(array[i]);
+    }
+     else {
+      lowBalance = [];
+    }
+  }
+  return lowBalance;
 }
 
 // === TEST YOURSELF ===
