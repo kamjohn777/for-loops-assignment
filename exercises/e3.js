@@ -16,9 +16,7 @@ export function getAverage(array) {
     averageNum += array[i]
   }
 
-  const aveOfAll = averageNum / array.length;
-
-  return aveOfAll;
+  return averageNum / array.length;
 }
 
 
